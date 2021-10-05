@@ -4,8 +4,6 @@
 
 LiskCoreBinaryFullPath="$HOME/lisk-core/bin/lisk-core"
 
-DiscordServerID='894759637914632222'
-
 #------------------------------------------------------------------------------
 
 BinaryAddress="N/A"
@@ -44,12 +42,12 @@ fi
 case $NetworkIdentifier in
     "4c09e6a781fc4c7bdb936ee815de8f94190f8a7519becd9de2081832be309a99")
         # MAINNET
-        DiscordWebhookToken='XU4FfSZpkGmADYlmbQWuSvHZfo_Bjulf89rYA9wgd78eTQSWpUDbNSqCCOiYLdXSYkcX'
+        DiscordWebhookToken='894759637914632222/XU4FfSZpkGmADYlmbQWuSvHZfo_Bjulf89rYA9wgd78eTQSWpUDbNSqCCOiYLdXSYkcX'
         ;;
 
     "15f0dacc1060e91818224a94286b13aa04279c640bd5d6f193182031d133df7c")
         # TESTNET
-        DiscordWebhookToken='gq8g8dQ6ttbb_B6uuU5L1VGW7ifDCP_RjMh1GvkY2TokJ1oOyov83vvISRdiU_1uFrX9'
+        DiscordWebhookToken='894769566671061022/gq8g8dQ6ttbb_B6uuU5L1VGW7ifDCP_RjMh1GvkY2TokJ1oOyov83vvISRdiU_1uFrX9'
         ;;
 
     *)
@@ -59,7 +57,7 @@ case $NetworkIdentifier in
         ;;
 esac
 
-WebHookUrl="https://discord.com/api/webhooks/$DiscordServerID/$DiscordWebhookToken"
+WebHookUrl="https://discord.com/api/webhooks/$DiscordWebhookToken"
 
 #------------------------------------------------------------------------------
 
