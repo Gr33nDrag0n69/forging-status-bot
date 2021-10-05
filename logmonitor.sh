@@ -20,9 +20,9 @@ while read -r Line ; do
         GeneratorAddress=$( echo "$Line" | jq -r '.meta.generatorAddress' )
         Height=$( echo "$Line" | jq '.meta.height' )
 
-        echo '--------------------------------------------------------------------------------'
+        #echo '--------------------------------------------------------------------------------'
         echo "$Height $GeneratorAddress Forged New Block"
-        echo '--------------------------------------------------------------------------------'
+        #echo '--------------------------------------------------------------------------------'
 
         "$HOME/forging-status-bot/send-message.sh" -a "$GeneratorAddress"
     fi
