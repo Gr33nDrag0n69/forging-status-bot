@@ -103,7 +103,8 @@ else
                         exit 1
                     else
                         Message="$DelegateName\n$BinaryAddress\n$Height $MaxHeightPreviouslyForged $MaxHeightPrevoted"
-                        curl -H "Content-Type: application/json" -X POST -d "{\"content\": \"$Message\"}" "$WebHookUrl"
+                        echo "DEBUG WebHookUrl: '$WebHookUrl'"
+                        curl -s -H "Content-Type: application/json" -X POST -d "{\"content\": \"$Message\"}" "$WebHookUrl"
                     fi
                 else
                     echo "Error: Invalid Value(s). $Height $MaxHeightPreviouslyForged $MaxHeightPrevoted" >&2
