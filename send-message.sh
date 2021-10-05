@@ -107,7 +107,7 @@ else
                         echo "Error: 'DelegateName' is empty for BinaryAddress '$BinaryAddress'." >&2
                         exit 1
                     else
-                        Message="$DelegateName\n$BinaryAddress\n$Height $MaxHeightPreviouslyForged $MaxHeightPrevoted"
+                        Message="**$DelegateName**\n\`\`\`\n$BinaryAddress\n$Height $MaxHeightPreviouslyForged $MaxHeightPrevoted\n\`\`\`"
                         curl -s -H "Content-Type: application/json" -X POST -d "{\"content\": \"$Message\"}" "$WebHookUrl"
                     fi
                 else
