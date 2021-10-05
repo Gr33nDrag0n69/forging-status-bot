@@ -1,6 +1,13 @@
 #!/bin/bash
 
-# Gr33nDrag0n 2021-10-04
+###############################################################################
+# Author  :   Gr33nDrag0n
+# Version :   1.0.0
+# GitHub  :   https://github.com/Gr33nDrag0n69/forging-status-bot
+# History :   2021/10/04 - v1.0.0
+###############################################################################
+
+# Default Configuration
 
 LiskCoreBinaryFullPath="$HOME/lisk-core/bin/lisk-core"
 
@@ -101,7 +108,6 @@ else
                         exit 1
                     else
                         Message="$DelegateName\n$BinaryAddress\n$Height $MaxHeightPreviouslyForged $MaxHeightPrevoted"
-                        echo "DEBUG WebHookUrl: '$WebHookUrl'"
                         curl -s -H "Content-Type: application/json" -X POST -d "{\"content\": \"$Message\"}" "$WebHookUrl"
                     fi
                 else
