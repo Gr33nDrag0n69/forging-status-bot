@@ -4,10 +4,8 @@
 # Author  :   Gr33nDrag0n
 # Version :   1.0.0
 # GitHub  :   https://github.com/Gr33nDrag0n69/forging-status-bot
-# History :   2021/10/04 - v1.0.0
+# History :   2021/10/15 - v1.0.0
 ###############################################################################
-
-# Default Configuration
 
 LiskCoreBinaryFullPath="$HOME/lisk-core/bin/lisk-core"
 
@@ -34,39 +32,9 @@ done
 
 if [ ! -f "$LiskCoreBinaryFullPath" ]
 then
-    echo "Error: lisk-core Binary NOT FOUND! Edit 'LiskCoreBinaryFullPath' value & retry. Aborting..." >&2
+    echo "Error: lisk-core Binary NOT FOUND! Edit 'LiskCoreBinaryFullPath' value in 'send-message.sh' & retry. Aborting..." >&2
     exit 1
 fi
-
-NetworkIdentifier=$( "$LiskCoreBinaryFullPath" node:info 2>/dev/null | jq -r '.networkIdentifier' )
-
-if [ -z "$NetworkIdentifier" ]
-then
-    echo "Error: 'lisk-core node:info' is empty. Validate the lisk-core process is currently running." >&2
-    exit 1
-fi
-
-case $NetworkIdentifier in
-    "4c09e6a781fc4c7bdb936ee815de8f94190f8a7519becd9de2081832be309a99")
-        # MAINNET
-        DiscordWebhookToken='894759637914632222/XU4FfSZpkGmADYlmbQWuSvHZfo_Bjulf89rYA9wgd78eTQSWpUDbNSqCCOiYLdXSYkcX'
-        ;;
-
-    "15f0dacc1060e91818224a94286b13aa04279c640bd5d6f193182031d133df7c")
-        # TESTNET
-        DiscordWebhookToken='894769566671061022/gq8g8dQ6ttbb_B6uuU5L1VGW7ifDCP_RjMh1GvkY2TokJ1oOyov83vvISRdiU_1uFrX9'
-        ;;
-
-    *)
-        # Invalid Network
-        echo "Error: 'lisk-core node:info' NetworkIdentifier is INVALID." >&2
-        exit 1
-        ;;
-esac
-
-WebHookUrl="https://discord.com/api/webhooks/$DiscordWebhookToken"
-
-#------------------------------------------------------------------------------
 
 NodeInfo=$( "$LiskCoreBinaryFullPath" node:info 2>/dev/null )
 
@@ -107,8 +75,29 @@ else
                         echo "Error: 'DelegateName' is empty for BinaryAddress '$BinaryAddress'." >&2
                         exit 1
                     else
+                        NetworkIdentifier=$( echo "$NodeInfo" | jq -r '.networkIdentifier' )
+
+                        case $NetworkIdentifier in
+                            "4c09e6a781fc4c7bdb936ee815de8f94190f8a7519becd9de2081832be309a99")
+                                # MAINNET
+                                DiscordWebhookToken='894759637914632222/XU4FfSZpkGmADYlmbQWuSvHZfo_Bjulf89rYA9wgd78eTQSWpUDbNSqCCOiYLdXSYkcX'
+                                ;;
+
+                            "15f0dacc1060e91818224a94286b13aa04279c640bd5d6f193182031d133df7c")
+                                # TESTNET
+                                DiscordWebhookToken='894769566671061022/gq8g8dQ6ttbb_B6uuU5L1VGW7ifDCP_RjMh1GvkY2TokJ1oOyov83vvISRdiU_1uFrX9'
+                                ;;
+
+                            *)
+                                # Invalid Network
+                                echo "Error: 'lisk-core node:info' NetworkIdentifier is INVALID." >&2
+                                exit 1
+                                ;;
+                        esac
+
                         Message="**$DelegateName**\n\`\`\`\n$BinaryAddress\n$Height $MaxHeightPreviouslyForged $MaxHeightPrevoted\n\`\`\`"
-                        curl -s -H "Content-Type: application/json" -X POST -d "{\"content\": \"$Message\"}" "$WebHookUrl"
+
+                        curl -s -H "Content-Type: application/json" -X POST -d "{\"content\": \"$Message\"}" "https://discord.com/api/webhooks/$DiscordWebhookToken"
                     fi
                 else
                     echo "Error: Invalid Value(s). $Height $MaxHeightPreviouslyForged $MaxHeightPrevoted" >&2
