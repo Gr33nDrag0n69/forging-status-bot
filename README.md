@@ -4,10 +4,10 @@ Send a 'forger-status' message every time a new block is forged by a delegate.
 
 - [Join Bot Discord server.](#join-bot-discord-server)
 - [Configure lisk-core log level.](#configure-lisk-core-log-level)
-- [Configuration Note(s)](#configuration-notes)
-- [Install Bot on Lisk server(s).9](#install-bot-on-lisk-servers9)
+- [Install tool on Lisk-Core 3 forging server](#install-tool-on-lisk-core-3-forging-server)
+- [Test tool](#test-tool)
 - [Script List](#script-list)
-- [Clean Uninstall Bot on Lisk server(s).](#clean-uninstall-bot-on-lisk-servers)
+- [Clean Uninstall](#clean-uninstall)
 
 ## Join Bot Discord server.
 
@@ -26,24 +26,22 @@ This code REQUIRE that lisk-core node run with `info` log level. Validate your l
 
 If you edited the configuration, don't forget to restart lisk-core for the new log level to apply.
 
-## Configuration Note(s)
+## Install tool on Lisk-Core 3 forging server
 
-TODO!!!
+**DO NOT MODIFY INSTALLATION PATH!** 
 
-* `logmonitor.sh` 
-* 
+`$HOME/forging-status-bot/` is hardcoded in the scripts for simplicity.
 
-## Install Bot on Lisk server(s).9
+* Clone Project.
+  `cd "$HOME" && git clone "https://github.com/Gr33nDrag0n69/forging-status-bot.git"`
 
-MANDATORY: The project is cloned in the home directory of the user: `$HOME/forging-status-bot/`.
+* Make all scripts executable.
+  `chmod 0700 $HOME/forging-status-bot/*.sh`
 
-```bash
-# Clone project
-cd "$HOME"
-git clone "https://github.com/Gr33nDrag0n69/forging-status-bot.git"
+## Test tool
 
-# Make all bash scripts executable
-chmod 0700 $HOME/forging-status-bot/*.sh
+```
+
 
 # Test send-message is working as expected.
 $HOME/forging-status-bot/send-message.sh
@@ -92,7 +90,7 @@ Add crontab job to execute `keepalive.sh` once each minute.
 Remove crontab job.
 ```
 
-## Clean Uninstall Bot on Lisk server(s).
+## Clean Uninstall
 
 Use these steps to remove the tool from your server.
 
