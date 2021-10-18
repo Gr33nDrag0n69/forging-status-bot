@@ -27,19 +27,30 @@ If you edited the configuration, don't forget to restart lisk-core for the new l
 `$HOME/forging-status-bot/` is hardcoded in the scripts for simplicity.
 
 #### Clone project
-> cd "$HOME" && git clone "https://github.com/Gr33nDrag0n69/forging-status-bot.git"
+```bash
+cd "$HOME"
+git clone "https://github.com/Gr33nDrag0n69/forging-status-bot.git"
+```
 
 #### Make all bash scripts executable
-> chmod 0700 $HOME/forging-status-bot/*.sh
+```bash
+chmod 0700 $HOME/forging-status-bot/*.sh
+```
 
 #### Test lisk-core binary path & log file path
-> $HOME/forging-status-bot/test-configuration.sh
+```bash
+$HOME/forging-status-bot/test-configuration.sh
+```
 
 #### Start Log Monitor
-> $HOME/forging-status-bot/start-logmonitor.sh
+```bash
+$HOME/forging-status-bot/start-logmonitor.sh
+```
 
 #### Install Keep Alive
-> $HOME/forging-status-bot/install-keepalive.sh
+```bash
+$HOME/forging-status-bot/install-keepalive.sh
+```
 
 ## Script List
 
