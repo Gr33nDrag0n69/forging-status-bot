@@ -12,6 +12,15 @@ Send a 'forger-status' message every time a new block is forged by a delegate.
     - [Start Log Monitor](#start-log-monitor)
     - [Install Keep Alive](#install-keep-alive)
 - [Script List](#script-list)
+    - [test-configuration.sh](#test-configurationsh)
+    - [send-message.sh](#send-messagesh)
+    - [show-log.sh](#show-logsh)
+    - [logmonitor.sh](#logmonitorsh)
+    - [start-logmonitor.sh](#start-logmonitorsh)
+    - [stop-logmonitor.sh](#stop-logmonitorsh)
+    - [keepalive.sh](#keepalivesh)
+    - [install-keepalive.sh](#install-keepalivesh)
+    - [uninstall-keepalive.sh](#uninstall-keepalivesh)
 - [Clean Uninstall](#clean-uninstall)
 
 ## Join Bot Discord server.
@@ -60,39 +69,43 @@ If you edited the configuration, don't forget to restart lisk-core for the new l
 
 This section describe the action executed by each included bash scripts.
 
-`test-configuration.sh`: Validate default values of lisk-core binary path & log file path.
+#### test-configuration.sh
 
-`send-message.sh`: Send forging status message to Discord server.
+Validate default values of lisk-core binary path & log file path.
 
-# show-log.sh
+#### send-message.sh
+
+Send forging status message to Discord server.
+
+#### show-log.sh
 
 Show the content of `forging-status-bot/logs/logmonitor.log`.
 
-# logmonitor.sh
+#### logmonitor.sh
 
 Monitor `$HOME/.lisk/lisk-core/logs/lisk.log` for `Forged new block`.
 When a new block is forged, execute `forging-status-bot/send-message.sh`
 
-# start-logmonitor.sh
+#### start-logmonitor.sh
 
 Start `forging-status-bot/logmonitor.sh` as a background process.
 
-# stop-logmonitor.sh
+#### stop-logmonitor.sh
 
 Kill all running instance of `forging-status-bot/logmonitor.sh` background process
 
-# keepalive.sh
+#### keepalive.sh
 
 If `forging-status-bot/logmonitor.sh` background process isn't currently running, execute `forging-status-bot/start-logmonitor.sh`.
 
-# install-keepalive.sh
+#### install-keepalive.sh
 
 Add crontab job to execute `keepalive.sh` once each minute.
 
-# uninstall-keepalive.sh
+#### uninstall-keepalive.sh
 
 Remove crontab job.
-```
+
 
 ## Clean Uninstall
 
