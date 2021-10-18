@@ -5,6 +5,8 @@ Send a 'forger-status' message every time a new block is forged by a delegate.
 - [Join Bot Discord server.](#join-bot-discord-server)
 - [Configure lisk-core log level.](#configure-lisk-core-log-level)
 - [Install tool on Lisk-Core 3 forging server](#install-tool-on-lisk-core-3-forging-server)
+  - [Start Log Monitor](#start-log-monitor)
+  - [Install Keep Alive](#install-keep-alive)
 - [Script List](#script-list)
 - [Clean Uninstall](#clean-uninstall)
 
@@ -44,17 +46,17 @@ $HOME/forging-status-bot/test-configuration.sh
 
 # Test send-message is working as expected.
 $HOME/forging-status-bot/send-message.sh
-
-# Start Log Monitor
-$HOME/forging-status-bot/start-logmonitor.sh
-
-# Install Keep Alive
-$HOME/forging-status-bot/install-keepalive.sh
 ```
+### Start Log Monitor
+> $HOME/forging-status-bot/start-logmonitor.sh
+
+### Install Keep Alive
+> $HOME/forging-status-bot/install-keepalive.sh
+
 
 ## Script List
 
-```markdown
+```txt
 # send-message.sh
 
 Send forging status message to Discord server.
