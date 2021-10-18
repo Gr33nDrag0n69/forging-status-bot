@@ -5,7 +5,6 @@ Send a 'forger-status' message every time a new block is forged by a delegate.
 - [Join Bot Discord server.](#join-bot-discord-server)
 - [Configure lisk-core log level.](#configure-lisk-core-log-level)
 - [Install tool on Lisk-Core 3 forging server](#install-tool-on-lisk-core-3-forging-server)
-- [Test tool](#test-tool)
 - [Script List](#script-list)
 - [Clean Uninstall](#clean-uninstall)
 
@@ -32,16 +31,16 @@ If you edited the configuration, don't forget to restart lisk-core for the new l
 
 `$HOME/forging-status-bot/` is hardcoded in the scripts for simplicity.
 
-* Clone Project.
-  `cd "$HOME" && git clone "https://github.com/Gr33nDrag0n69/forging-status-bot.git"`
+```bash
+# Clone project
+cd "$HOME"
+git clone "https://github.com/Gr33nDrag0n69/forging-status-bot.git"
 
-* Make all scripts executable.
-  `chmod 0700 $HOME/forging-status-bot/*.sh`
+# Make all bash scripts executable
+chmod 0700 $HOME/forging-status-bot/*.sh
 
-## Test tool
-
-```
-
+# Test lisk-core binary path & log file path
+$HOME/forging-status-bot/test-configuration.sh
 
 # Test send-message is working as expected.
 $HOME/forging-status-bot/send-message.sh
