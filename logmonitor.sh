@@ -4,18 +4,16 @@
 # Author  :   Gr33nDrag0n
 # Version :   1.0.0
 # GitHub  :   https://github.com/Gr33nDrag0n69/forging-status-bot
-# History :   2021/10/15 - v1.0.0
+# History :   2021/10/17 - v1.0.0
 ###############################################################################
 
-# Default Configuration
-
-LiskLogFile="$HOME/.lisk/lisk-core/logs/lisk.log"
+source "$HOME/forging-status-bot/CONFIG"
 
 #------------------------------------------------------------------------------
 
 if [ ! -f "$LiskLogFile" ]
 then
-    echo "Error: lisk-core log file NOT FOUND! Edit 'LiskLogFile' value in 'logmonitor.sh' & retry. Aborting..." >&2
+    echo "Error: lisk-core log file NOT FOUND! Edit 'LiskLogFile' value in 'CONFIG' & retry. Aborting..." >&2
     exit 1
 fi
 
