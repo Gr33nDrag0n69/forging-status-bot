@@ -1,0 +1,2 @@
+LiskCoreBinaryFullPath="$HOME/lisk-core/bin/lisk-core"
+LiskLogFile="$HOME/.lisk/lisk-core/logs/lisk.log"
