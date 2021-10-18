@@ -77,27 +77,20 @@ Kill all running instance of `forging-status-bot/logmonitor.sh` background proce
 
 If `forging-status-bot/logmonitor.sh` background process isn't currently running, execute `forging-status-bot/start-logmonitor.sh`.
 
-#### install-keepalive.sh
-
-Add crontab job to execute `keepalive.sh` once each minute.
-
-#### uninstall-keepalive.sh
-
-Remove crontab job.
+| --- | --- |
+| install-keepalive.sh | Add crontab job to execute `keepalive.sh` once each minute. |
+| uninstall-keepalive.sh | Remove crontab job. |
 
 
 ## Clean Uninstall
 
 Use these steps to remove the tool from your server.
 
-```bash
-# Clean Crontab
-$HOME/forging-status-bot/uninstall-keepalive.sh
+#### Clean Crontab
+> $HOME/forging-status-bot/uninstall-keepalive.sh
 
-# Stop Log-Watcher
-$HOME/forging-status-bot/stop-logmonitor.sh
+#### Stop Log-Watcher
+> $HOME/forging-status-bot/stop-logmonitor.sh
 
-# Destroy Directory
-rm -rf "$HOME/forging-status-bot/"
-
-```
+#### Destroy Directory
+> rm -rf "$HOME/forging-status-bot/"
