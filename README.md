@@ -46,17 +46,17 @@ If you edited the configuration, don't forget to restart lisk-core for the new l
 
 ## Script List
 
-| Bash Script               | Description                                                                                                                                         |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **test-configuration.sh** | Validate default values of lisk-core binary path & log file path.                                                                                   |
-| send-message.sh           | Send forging status message to Discord server.                                                                                                      |
-| show-log.sh               | Show the content of `forging-status-bot/logs/logmonitor`.log`.                                                                                      |
-| logmonitor.sh             | Monitor `$HOME/.lisk/lisk-core/logs/lisk.log` for `Forged new block`.<br />When a new block is forged, execute `forging-status-bot/send-message.sh` |
-| start-logmonitor.sh       | Start `forging-status-bot/logmonitor.sh` as a background process.                                                                                   |
-| stop-logmonitor.sh        | Kill all running instance of `forging-status-bot/logmonitor.sh` background process.                                                                 |
-| keepalive.sh              | If `forging-status-bot/logmonitor.sh` background process isn't currently running,<br />execute `forging-status-bot/start-logmonitor.sh`.            |
-| install-keepalive.sh      | Add crontab job to execute `keepalive.sh` once each minute.                                                                                         |
-| uninstall-keepalive.sh    | Remove crontab job.                                                                                                                                 |
+| Bash Script            | Description                                                                                                                                         |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| test-configuration.sh  | Validate default values of lisk-core binary path & log file path.                                                                                   |
+| send-message.sh        | Send forging status message to Discord server.                                                                                                      |
+| show-log.sh            | Show the content of `forging-status-bot/logs/logmonitor`.log`.                                                                                      |
+| logmonitor.sh          | Monitor `$HOME/.lisk/lisk-core/logs/lisk.log` for `Forged new block`.<br />When a new block is forged, execute `forging-status-bot/send-message.sh` |
+| start-logmonitor.sh    | Start `forging-status-bot/logmonitor.sh` as a background process.                                                                                   |
+| stop-logmonitor.sh     | Kill all running instance of `forging-status-bot/logmonitor.sh` background process.                                                                 |
+| keepalive.sh           | If `forging-status-bot/logmonitor.sh` background process isn't currently running,<br />execute `forging-status-bot/start-logmonitor.sh`.            |
+| install-keepalive.sh   | Add crontab job to execute `keepalive.sh` once each minute.                                                                                         |
+| uninstall-keepalive.sh | Remove crontab job.                                                                                                                                 |
 
 
 ## Clean Uninstall
