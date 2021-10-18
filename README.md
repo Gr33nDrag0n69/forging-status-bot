@@ -5,6 +5,10 @@ Send a 'forger-status' message every time a new block is forged by a delegate.
 - [Join Bot Discord server.](#join-bot-discord-server)
 - [Configure lisk-core log level.](#configure-lisk-core-log-level)
 - [Install tool on Lisk-Core 3 forging server](#install-tool-on-lisk-core-3-forging-server)
+  - [Clone project](#clone-project)
+  - [Make all bash scripts executable](#make-all-bash-scripts-executable)
+  - [Test lisk-core binary path & log file path](#test-lisk-core-binary-path--log-file-path)
+  - [Test send-message is working as expected.](#test-send-message-is-working-as-expected)
   - [Start Log Monitor](#start-log-monitor)
   - [Install Keep Alive](#install-keep-alive)
 - [Script List](#script-list)
@@ -27,26 +31,26 @@ This code REQUIRE that lisk-core node run with `info` log level. Validate your l
 
 If you edited the configuration, don't forget to restart lisk-core for the new log level to apply.
 
+
 ## Install tool on Lisk-Core 3 forging server
 
 **DO NOT MODIFY INSTALLATION PATH!** 
 
 `$HOME/forging-status-bot/` is hardcoded in the scripts for simplicity.
 
-```bash
-# Clone project
-cd "$HOME"
-git clone "https://github.com/Gr33nDrag0n69/forging-status-bot.git"
+### Clone project
+> cd "$HOME"
+> git clone "https://github.com/Gr33nDrag0n69/forging-status-bot.git"
 
-# Make all bash scripts executable
-chmod 0700 $HOME/forging-status-bot/*.sh
+### Make all bash scripts executable
+> chmod 0700 $HOME/forging-status-bot/*.sh
 
-# Test lisk-core binary path & log file path
-$HOME/forging-status-bot/test-configuration.sh
+### Test lisk-core binary path & log file path
+> $HOME/forging-status-bot/test-configuration.sh
 
-# Test send-message is working as expected.
-$HOME/forging-status-bot/send-message.sh
-```
+### Test send-message is working as expected.
+> $HOME/forging-status-bot/send-message.sh
+
 ### Start Log Monitor
 > $HOME/forging-status-bot/start-logmonitor.sh
 
