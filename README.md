@@ -35,9 +35,6 @@ If you edited the configuration, don't forget to restart lisk-core for the new l
 #### Test lisk-core binary path & log file path
 > $HOME/forging-status-bot/test-configuration.sh
 
-#### Test Discord Message
-> $HOME/forging-status-bot/send-message.sh
-
 #### Start Log Monitor
 > $HOME/forging-status-bot/start-logmonitor.sh
 
