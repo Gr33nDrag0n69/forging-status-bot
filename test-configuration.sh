@@ -9,9 +9,6 @@
 
 source "$HOME/forging-status-bot/CONFIG"
 
-echo "$LiskLogFile"
-exit
-
 #------------------------------------------------------------------------------
 
 if [ ! -f "$LiskCoreBinaryFullPath" ]
