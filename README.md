@@ -8,7 +8,7 @@ Send a 'forger-status' message every time a new block is forged by a delegate.
     - [Clone project](#clone-project)
     - [Make all bash scripts executable](#make-all-bash-scripts-executable)
     - [Test lisk-core binary path & log file path](#test-lisk-core-binary-path--log-file-path)
-    - [Test send-message is working as expected.](#test-send-message-is-working-as-expected)
+    - [Test Discord Message](#test-discord-message)
     - [Start Log Monitor](#start-log-monitor)
     - [Install Keep Alive](#install-keep-alive)
 - [Script List](#script-list)
@@ -47,7 +47,7 @@ If you edited the configuration, don't forget to restart lisk-core for the new l
 #### Test lisk-core binary path & log file path
 > $HOME/forging-status-bot/test-configuration.sh
 
-#### Test send-message is working as expected.
+#### Test Discord Message
 > $HOME/forging-status-bot/send-message.sh
 
 #### Start Log Monitor
@@ -56,13 +56,13 @@ If you edited the configuration, don't forget to restart lisk-core for the new l
 #### Install Keep Alive
 > $HOME/forging-status-bot/install-keepalive.sh
 
-
 ## Script List
 
-```txt
-# send-message.sh
+This section describe the action executed by each included bash scripts.
 
-Send forging status message to Discord server.
+`test-configuration.sh`: Validate default values of lisk-core binary path & log file path.
+
+`send-message.sh`: Send forging status message to Discord server.
 
 # show-log.sh
 
