@@ -2,27 +2,6 @@
 
 Send a 'forger-status' message every time a new block is forged by a delegate.
 
-- [Join Bot Discord server.](#join-bot-discord-server)
-- [Configure lisk-core log level.](#configure-lisk-core-log-level)
-- [Install tool on Lisk-Core 3 forging server](#install-tool-on-lisk-core-3-forging-server)
-    - [Clone project](#clone-project)
-    - [Make all bash scripts executable](#make-all-bash-scripts-executable)
-    - [Test lisk-core binary path & log file path](#test-lisk-core-binary-path--log-file-path)
-    - [Test Discord Message](#test-discord-message)
-    - [Start Log Monitor](#start-log-monitor)
-    - [Install Keep Alive](#install-keep-alive)
-- [Script List](#script-list)
-    - [test-configuration.sh](#test-configurationsh)
-    - [send-message.sh](#send-messagesh)
-    - [show-log.sh](#show-logsh)
-    - [logmonitor.sh](#logmonitorsh)
-    - [start-logmonitor.sh](#start-logmonitorsh)
-    - [stop-logmonitor.sh](#stop-logmonitorsh)
-    - [keepalive.sh](#keepalivesh)
-    - [install-keepalive.sh](#install-keepalivesh)
-    - [uninstall-keepalive.sh](#uninstall-keepalivesh)
-- [Clean Uninstall](#clean-uninstall)
-
 ## Join Bot Discord server.
 
 Go to [https://discord.gg/RDstbDTKaH](https://discord.gg/RDstbDTKaH) to join the bot Discord server.
