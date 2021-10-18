@@ -1,24 +1,41 @@
-# forging-status-bot - NOT READY FOR PRODUCTION!
+![##Images_README_Header##](./img/discord_banner.png)
 
-Discord Bot that will send forger-status message every time a new block is forged by a local forging delegate.
+Send a 'forger-status' message every time a new block is forged by a delegate.
 
-- [forging-status-bot - NOT READY FOR PRODUCTION!](#forging-status-bot---not-ready-for-production)
-  - [Warning(s)](#warnings)
-  - [Join Bot Discord server.](#join-bot-discord-server)
-  - [Install Bot on Lisk server(s).](#install-bot-on-lisk-servers)
-  - [Script List](#script-list)
-
-## Warning(s)
-
-* The project MUST be cloned in the home directory of the user: `$HOME/forging-status-bot/`.
-* There is currently no config file in the project and some things are hard coded.
-* This code require that the target lisk-core node run with `info` log level.
+- [Join Bot Discord server.](#join-bot-discord-server)
+- [Configure lisk-core log level.](#configure-lisk-core-log-level)
+- [Configuration Note(s)](#configuration-notes)
+- [Install Bot on Lisk server(s).9](#install-bot-on-lisk-servers9)
+- [Script List](#script-list)
+- [Clean Uninstall Bot on Lisk server(s).](#clean-uninstall-bot-on-lisk-servers)
 
 ## Join Bot Discord server.
 
-[forging-status-bot](https://discord.gg/RDstbDTKaH)
+Go to [https://discord.gg/RDstbDTKaH](https://discord.gg/RDstbDTKaH) to join the bot Discord server.
 
-## Install Bot on Lisk server(s).
+## Configure lisk-core log level.
+
+This code REQUIRE that lisk-core node run with `info` log level. Validate your lisk-core log level configuration. It should look like this:
+
+```json
+  "logger": {
+    "fileLogLevel": "info",
+    "consoleLogLevel": "info"
+  }
+```
+
+If you edited the configuration, don't forget to restart lisk-core for the new log level to apply.
+
+## Configuration Note(s)
+
+TODO!!!
+
+* `logmonitor.sh` 
+* 
+
+## Install Bot on Lisk server(s).9
+
+MANDATORY: The project is cloned in the home directory of the user: `$HOME/forging-status-bot/`.
 
 ```bash
 # Clone project
@@ -43,7 +60,7 @@ $HOME/forging-status-bot/install-keepalive.sh
 ```markdown
 # send-message.sh
 
-Send forging status message using cofigured method(s).
+Send forging status message to Discord server.
 
 # show-log.sh
 
@@ -73,4 +90,20 @@ Add crontab job to execute `keepalive.sh` once each minute.
 # uninstall-keepalive.sh
 
 Remove crontab job.
+```
+
+## Clean Uninstall Bot on Lisk server(s).
+
+Use these steps to remove the tool from your server.
+
+```bash
+# Clean Crontab
+$HOME/forging-status-bot/uninstall-keepalive.sh
+
+# Stop Log-Watcher
+$HOME/forging-status-bot/stop-logmonitor.sh
+
+# Destroy Directory
+rm -rf "$HOME/forging-status-bot/"
+
 ```
