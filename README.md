@@ -71,7 +71,7 @@ chmod 0700 ~/forging-status-bot/*.sh
 
 Use these steps to remove the tool from your server.
 
-#### Clean Crontab
+#### Uninstall Keep Alive
 ```bash
 ~/forging-status-bot/uninstall-keepalive.sh
 ```
