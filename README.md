@@ -63,8 +63,8 @@ Use these steps to remove the tool from your server.
 #### Clean Crontab
 > $HOME/forging-status-bot/uninstall-keepalive.sh
 
-#### Stop Log-Watcher
+#### Stop Log Monitor
 > $HOME/forging-status-bot/stop-logmonitor.sh
 
-#### Destroy Directory
+#### Delete Directory
 > rm -rf "$HOME/forging-status-bot/"
