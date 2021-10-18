@@ -4,10 +4,10 @@
 # Author  :   Gr33nDrag0n
 # Version :   1.0.0
 # GitHub  :   https://github.com/Gr33nDrag0n69/forging-status-bot
-# History :   2021/10/15 - v1.0.0
+# History :   2021/10/17 - v1.0.0
 ###############################################################################
 
-LiskCoreBinaryFullPath="$HOME/lisk-core/bin/lisk-core"
+source "$HOME/forging-status-bot/CONFIG"
 
 #------------------------------------------------------------------------------
 
@@ -32,7 +32,7 @@ done
 
 if [ ! -f "$LiskCoreBinaryFullPath" ]
 then
-    echo "Error: lisk-core Binary NOT FOUND! Edit 'LiskCoreBinaryFullPath' value in 'send-message.sh' & retry. Aborting..." >&2
+    echo "Error: lisk-core Binary NOT FOUND! Edit 'LiskCoreBinaryFullPath' value in 'CONFIG' & retry. Aborting..." >&2
     exit 1
 fi
 
