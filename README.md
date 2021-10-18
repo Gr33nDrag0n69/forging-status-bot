@@ -24,47 +24,47 @@ If you edited the configuration, don't forget to restart lisk-core for the new l
 
 **DO NOT MODIFY INSTALLATION PATH!** 
 
-`$HOME/forging-status-bot/` is hardcoded in the scripts for simplicity.
+`~/forging-status-bot/` is hardcoded in the scripts for simplicity.
 
 #### Clone project
 ```bash
-cd "$HOME"
+cd ~
 git clone "https://github.com/Gr33nDrag0n69/forging-status-bot.git"
 ```
 
 #### Make all bash scripts executable
 ```bash
-chmod 0700 $HOME/forging-status-bot/*.sh
+chmod 0700 ~/forging-status-bot/*.sh
 ```
 
 #### Test lisk-core binary path & log file path
 ```bash
-$HOME/forging-status-bot/test-configuration.sh
+~/forging-status-bot/test-configuration.sh
 ```
 
 #### Start Log Monitor
 ```bash
-$HOME/forging-status-bot/start-logmonitor.sh
+~/forging-status-bot/start-logmonitor.sh
 ```
 
 #### Install Keep Alive
 ```bash
-$HOME/forging-status-bot/install-keepalive.sh
+~/forging-status-bot/install-keepalive.sh
 ```
 
 ## Script List
 
-| Bash Script            | Description                                                                                                                                         |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| test-configuration.sh  | Validate default values of lisk-core binary path & log file path.                                                                                   |
-| send-message.sh        | Send forging status message to Discord server.                                                                                                      |
-| show-log.sh            | Show the content of `forging-status-bot/logs/logmonitor`.log`.                                                                                      |
-| logmonitor.sh          | Monitor `$HOME/.lisk/lisk-core/logs/lisk.log` for `Forged new block`.<br />When a new block is forged, execute `forging-status-bot/send-message.sh` |
-| start-logmonitor.sh    | Start `forging-status-bot/logmonitor.sh` as a background process.                                                                                   |
-| stop-logmonitor.sh     | Kill all running instance of `forging-status-bot/logmonitor.sh` background process.                                                                 |
-| keepalive.sh           | If `forging-status-bot/logmonitor.sh` background process isn't currently running,<br />execute `forging-status-bot/start-logmonitor.sh`.            |
-| install-keepalive.sh   | Add crontab job to execute `keepalive.sh` once each minute.                                                                                         |
-| uninstall-keepalive.sh | Remove crontab job.                                                                                                                                 |
+| Bash Script            | Description                                                                                                                                     |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| test-configuration.sh  | Validate default values of lisk-core binary path & log file path.                                                                               |
+| send-message.sh        | Send forging status message to Discord server.                                                                                                  |
+| show-log.sh            | Show the content of `forging-status-bot/logs/logmonitor`.log`.                                                                                  |
+| logmonitor.sh          | Monitor `~/.lisk/lisk-core/logs/lisk.log` for `Forged new block`.<br />When a new block is forged, execute `forging-status-bot/send-message.sh` |
+| start-logmonitor.sh    | Start `forging-status-bot/logmonitor.sh` as a background process.                                                                               |
+| stop-logmonitor.sh     | Kill all running instance of `forging-status-bot/logmonitor.sh` background process.                                                             |
+| keepalive.sh           | If `forging-status-bot/logmonitor.sh` background process isn't currently running,<br />execute `forging-status-bot/start-logmonitor.sh`.        |
+| install-keepalive.sh   | Add crontab job to execute `keepalive.sh` once each minute.                                                                                     |
+| uninstall-keepalive.sh | Remove crontab job.                                                                                                                             |
 
 
 ## Clean Uninstall
@@ -73,15 +73,16 @@ Use these steps to remove the tool from your server.
 
 #### Clean Crontab
 ```bash
-$HOME/forging-status-bot/uninstall-keepalive.sh
+~/forging-status-bot/uninstall-keepalive.sh
 ```
 
 #### Stop Log Monitor
 ```bash
-$HOME/forging-status-bot/stop-logmonitor.sh
+~/forging-status-bot/stop-logmonitor.sh
 ```
 
 #### Delete Directory
 ```bash
-rm -rf "$HOME/forging-status-bot/"
+cd ~
+rm -rf "~/forging-status-bot/"
 ```
